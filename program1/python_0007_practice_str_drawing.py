@@ -70,3 +70,17 @@ print(right_star)
 print(right_star)
 print(star_line)
 
+print("---------------------------------------------------------")
+# Letter 'T'
+
+central_star = ' ' * 7 + '*' + ' ' * 2
+
+
+print(star_line)
+print(central_star)
+print(central_star)
+print(central_star)
+print(central_star)
+print(central_star)
+print(central_star)
+
