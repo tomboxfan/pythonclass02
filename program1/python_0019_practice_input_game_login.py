@@ -31,3 +31,6 @@ print(f"Now you have coins: {total_coins}. You can continue to play the game.")
 #--Challenging Question:
 # if user tops up coins less than 500, then you tell user you still don't have enough coins.
 # If user tops up coins greater than 500, tell user, you can continue to play.
+# -------------------------------------------
+# Keep this Question OPEN till next lesson.
+# -------------------------------------------
