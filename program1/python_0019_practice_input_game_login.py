@@ -26,7 +26,7 @@ coins_topup = int(coin_topup_str)
 
 total_coins += coins_topup
 
-print(f"Now you have coins: {total_coins}. You can continue to play the game.")
+# print(f"Now you have coins: {total_coins}. You can continue to play the game.")
 
 #--Challenging Question:
 # if user tops up coins less than 500, then you tell user you still don't have enough coins.
@@ -34,3 +34,10 @@ print(f"Now you have coins: {total_coins}. You can continue to play the game.")
 # -------------------------------------------
 # Keep this Question OPEN till next lesson.
 # -------------------------------------------
+
+coins_requirment = 500
+
+if total_coins < coins_requirment:
+    print(f"You still do not have enough coins, you need to top up extra {coins_requirment - total_coins} coins")
+else:
+    print(f"Now you have coins: {total_coins}. You can continue to play the game.")
