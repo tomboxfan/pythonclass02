@@ -5,3 +5,37 @@
 # English Elite Class - English score higher than 85 and 3 subjects average higher than 75 and no suject lower than 70
 # Express Class - average higher than 75 and no subject lower than 65
 # Normal Class - other students
+
+
+# Step 0) Get score from console ---------------------
+math_score = float(input("Math score: "))
+science_score = float(input("Science score: "))
+english_score = float(input("English score: "))
+
+# Step 1) calculate the average score ----------------
+average_score = (math_score + science_score + english_score) / 3
+print(f"Your score is: {math_score}, {science_score}, {english_score}. Average score: {average_score:.2f}")
+
+# Step 2) Check eligibility for Elite Class
+if math_score > 85 and science_score > 85 and english_score > 85:
+    class_name = 'Elite Class'
+
+
+# Step 3) Check eligibility for Subject Elite Class
+elif (math_score > 85 or science_score > 85 or english_score > 85) and average_score > 75 and math_score >= 70 and science_score >= 70 and english_score >= 70:
+    if math_score > 85:
+        class_name = 'Math Elite Class'
+    elif science_score > 85:
+        class_name = 'Science Elite Class'
+    else:
+        class_name = 'English Elite Class'
+
+# Step 4) Check eligibility for express class
+elif average_score > 75 and math_score >= 65 and science_score >= 65 and english_score >= 65:
+    class_name = 'Express Class'
+
+# Step 5) assigned to normal class
+else:
+    class_name = "Normal Class"
+
+print(f"You are assigned to {class_name}")

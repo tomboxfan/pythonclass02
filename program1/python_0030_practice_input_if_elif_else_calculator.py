@@ -12,7 +12,11 @@ elif operator == '-':
 elif operator == '*':
     result = float_a * float_b
 elif operator == '/':
-    result = float_a / float_b
+    if float_b == 0:
+        print("Wrong input, float_b cannot be 0, please try again!")
+    else:
+        result = float_a / float_b
+
 elif operator == '**':
     result = float_a ** float_b
 else:
