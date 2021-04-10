@@ -63,7 +63,34 @@ if product_name == 'beef' or product_name == 'pork' or product_name == 'tomato':
     print(f"{product_name}: ${unit_price} * {total_weight} = ${total_price}")
 
 elif product_name == 'apple' or product_name == 'orange':
-    pass # HOMEWORK
+    # 1st step:
+    # read the data
+    # You need to know: how many apple / orange does the customer buy?
+    total_count = int(input("Total quantity: "))
+
+    if product_name == 'apple':
+        # 2nd step:
+        # Prepare the data
+        group_count = total_count // 5
+        single_count = total_count % 5
+        group_price = 5     # $5 for 5 apples
+        single_price = 1.6  # $1.6 each
+    else: # orange
+        # 2nd step:
+        # Prepare the data
+        group_count = total_count // 3
+        single_count = total_count % 3
+        group_price = 5  # $5 for 3 oranges
+        single_price = 2  # $2 each
+
+    # 3rd step:
+    # Calculation.
+    group_price_total = group_price * group_count
+    single_price_total = single_price * single_count
+    total_price = group_price_total + single_price_total
+
+    # 4th step: print the result
+    print(f"{product_name} : ${total_price}")
 
 else:
     print(f"Unrecognized product: {product_name}")
@@ -87,6 +114,20 @@ elif payment == 'NETS':
     password = input("Please input your NETS password:")
     print(f"${total_price} has been charged to your NETS card.")
 elif payment == 'Cash':
-    pass # HOMEWORK
+    total_paid = float(input("How much will you pay? "))
+    if total_paid > total_price:
+        print(f"here comes your change: ${total_paid - total_price}")
+    elif total_paid < total_price:
+        print(f"You are still short of ${total_price - total_paid}. I am sorry, I cannot give you {product_name}")
+    else:
+        print("You've paid the exact amount.")
 else:
     print("Unsupported payment.")
+
+bye_msg = '''
+************************
+    See you again!
+************************
+'''
+
+print(bye_msg)
