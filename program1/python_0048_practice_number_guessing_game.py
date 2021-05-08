@@ -16,3 +16,34 @@ Step 2) Use random module to generate a number in the range as the answer
 Step 3) Loop to ask the user "what's the correct answer?", and tell him/her higher or lower. If it is correct, exit. 
 '''
 
+import random
+
+
+# Step 1)
+lower = int(input("Enter positive lower bound: "))
+upper = int(input("Enter positive upper bound: "))
+
+# Step 2)
+answer = random.randint(lower, upper)
+
+
+count = 0
+
+# Step 3)
+while True:
+
+    # Step 3.1) Get user guess
+    guess_result = int(input("Guess a number:"))
+
+    # Step 3.2) update the count
+    count += 1
+
+    # Step 3.3)
+    if answer == guess_result:
+        print(f"Congrats! You did it in {count} try.")
+        break
+
+    elif answer > guess_result:
+        print("Try again! You guessed too low.")
+    else:
+        print("Try again! You guessed too high.")
