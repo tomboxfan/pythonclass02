@@ -1,61 +1,40 @@
 '''
-Requirment:
-1) implement NTUC supermarket price calculator.
-2) Each time, a customer can buy 1 product - beef / pork / tomato / apple / orange
-3) beef / pork / tomato - total price calculated by weight
-   beef - $20 / kg
-   pork - $16 / kg
-   tomato - $5 / kg
-4) apple / orange - total price calculated by quantity
-   apple - $5 for 5 apples; $1.6 each
-   orange - $5 for 3 oranges; $2 each
-5) implement a membership system, member will get 10% discount
-   i) You need to ask customer, "Are you a member?"
-   ii) customer can answer 'y', 'Y', 'yes', 'Yes'. All 4 answers mean he is a NTUC member.
-6) implement a payment system, which supports Visa/Mastercard/NETS/Cash
-   i) If user pays with Visa/Mastercard, you need to ask user to sign his name. (Use input() to get user's signature)
-   ii) If user pays with NETS, you ned to ask user to input his card password. (Use input() to get user's password)
-   iii) If user pays with Cash, you need to check whether you should give customer some change, whether he has paid enough money, etc.
+Requirement:
+user inputs year / month / day information from the console
+Your program needs to tell the user how many days in the year there are in front of the date which user input
+For example: if user tells you 2019 Jan 1st, then your output should be 1
+For example: if user tells you 2019 Feb 1st, then your output should be 32
+HINT: Please consider leap year.
 '''
 
-welcome_msg = '''
-**************************************
-    Welcome to NTUC Supermarket
-**************************************
-'''
+year = int(input("Please input year:"))
+month = int(input("Please input month:"))
+day = int(input("Please input day:"))
 
-print(welcome_msg)
-
-product_prices = '''
----------------------------------
-   beef - $20 / kg
-   pork - $16 / kg
-   tomato - $5 / kg
-   apple - $5 for 5 apples; $1.6 each
-   orange - $5 for 3 oranges; $2 each   
----------------------------------
-'''
-
-print(product_prices)
+print(year, '-', month, '-', day)
+Jan = 31
+Feb = 59
+Mar = 90
+Apr = 120
+May = 151
+Jun = 181
+Jul = 212
+Aug = 243
+Sep = 273
+Oct = 304
+Nov = 334
+Dec = 356
 
 
-product_name = input("What product do you want to buy (beef / pork / tomato / apple / orange): ")
+# You should code in this way:
+days_passed = 0
 
-total_price = 0
+if month == 2:
+    days_passed = Jan   #if it is Feb, you need to add 31 days to days_pass
+elif month == 3:
+    days_passed = Feb
+elif month == 4:
+    days_passed = Mar
 
-if product_name == 'beef' or product_name == 'pork' or product_name == 'tomato':
 
-    total_weight = float(input("Total weight(kg): "))
-
-    if product_name == 'beef':
-        unit_price = 20
-    elif product_name == 'pork':
-        unit_price = 16
-    else:
-        unit_price = 5
-
-    total_price = unit_price * total_weight
-    print(f"{product_name}: ${unit_price} * {total_weight} = ${total_price}")
-
-elif product_name == 'apple' or product_name == 'orange':
-    pass # HO
+print(days_passed)

@@ -60,44 +60,51 @@ Mr Seah.
 
 # Step 1) Let's work on a version without loop
 
-profit = int(input("Total profit of the year:"))
+while True:
 
-bonus = 0
+    profit_str = input("Total profit of the year:")
 
-if profit <= 1000000:
-    bonus = profit * 0.1
+    if profit_str == 'exit':
+        break
 
-elif profit <= 2000000:
-    bonus = 1000000 * 0.1
-    bonus += (profit - 1000000) * 0.075
+    profit = int(profit_str)
 
-elif profit <= 4000000:
-    bonus = 1000000 * 0.1
-    bonus += 1000000 * 0.075
-    bonus += (profit - 2000000) * 0.05
+    bonus = 0
 
-elif profit <= 6000000:
-    bonus = 1000000 * 0.1
-    bonus += 1000000 * 0.075
-    bonus += 2000000 * 0.05
-    bonus += (profit - 4000000) * 0.03
+    if profit <= 1000000:
+        bonus = profit * 0.1
 
-elif profit <= 10000000:
-    bonus = 1000000 * 0.1
-    bonus += 1000000 * 0.075
-    bonus += 2000000 * 0.05
-    bonus += 2000000 * 0.03
-    bonus += (profit - 6000000) * 0.015
+    elif profit <= 2000000:
+        bonus = 1000000 * 0.1
+        bonus += (profit - 1000000) * 0.075
 
-else:
-    bonus = 1000000 * 0.1
-    bonus += 1000000 * 0.075
-    bonus += 2000000 * 0.05
-    bonus += 2000000 * 0.03
-    bonus += 4000000 * 0.015
-    bonus += (profit - 10000000) * 0.01
+    elif profit <= 4000000:
+        bonus = 1000000 * 0.1
+        bonus += 1000000 * 0.075
+        bonus += (profit - 2000000) * 0.05
 
-print(f"We should keep ${bonus} to our staff for this outlet")
+    elif profit <= 6000000:
+        bonus = 1000000 * 0.1
+        bonus += 1000000 * 0.075
+        bonus += 2000000 * 0.05
+        bonus += (profit - 4000000) * 0.03
+
+    elif profit <= 10000000:
+        bonus = 1000000 * 0.1
+        bonus += 1000000 * 0.075
+        bonus += 2000000 * 0.05
+        bonus += 2000000 * 0.03
+        bonus += (profit - 6000000) * 0.015
+
+    else:
+        bonus = 1000000 * 0.1
+        bonus += 1000000 * 0.075
+        bonus += 2000000 * 0.05
+        bonus += 2000000 * 0.03
+        bonus += 4000000 * 0.015
+        bonus += (profit - 10000000) * 0.01
+
+    print(f"We should keep ${bonus} to our staff for this outlet")
 
 
 
