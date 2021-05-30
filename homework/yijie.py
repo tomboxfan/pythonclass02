@@ -1,60 +1,98 @@
-year = int(input("Please input year: "))
-month = int(input("Please input month (numerals) : "))
-day = (input("Please input day (numerals) : "))
+print('Today, I watched the Champions League final.')
 
-print(year, '-', month, '-', day)
+mancity_players = ['Ederson (GK)', 'Walker', 'Stones', 'Dias', 'Zinchenko', 'B.Silva', 'Gündogan', 'Foden', 'Mahrez', 'De Bruyne (C)', 'Sterling']
+chelsea_players = ['Mendy (GK)', 'Rüdiger', 'T.Silva', 'Azpilicueta (C)', 'Chilwell', 'Jorginho', 'Kanté', 'James', 'Mount', 'Havertz', 'Werner']
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
+print(f'Man City starting 11: {mancity_players}')
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
+print(f'Chelsea starting 11: {chelsea_players}')
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
 
-user_input_month = input('Please input month (name of month) : ')
+print('Match begins.')
 
-january = 0
-february = 31
-march = 31 + 28
-april = 31 + 28 + 31
-may = 31 + 28 + 31 + 30
-june = 31 + 28 + 31 + 30 + 31
-july = 31 + 28 + 31 + 30 + 31 + 30
-august = 31 + 28 + 31 + 30 + 31 + 30 + 30
-september = 31 + 28 + 31 + 30 + 31 + 30 + 30 + 31
-october = 31 + 28 + 31 + 30 + 31 + 30 + 30 + 31 + 30
-november = 31 + 28 + 31 + 30 + 31 + 30 + 30 + 31 + 30 + 31
-december = 31 + 28 + 31 + 30 + 31 + 30 + 30 + 31 + 30 + 31 + 30
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
 
-total_day_count = (user_input_month + day)
+mancity_players.remove('Gündogan')
+mancity_players.insert(6, 'Gündogan (Y)')
+print(f'34 mins: Yellow Card for Gündogan (Man City) {mancity_players}')
 
-if user_input_month == january:
-    print(f"{user_input_month} + {day} = {total_day_count}")
-elif user_input_month == february:
-    print(f"{user_input_month} + {day} = {total_day_count}")
-elif user_input_month == march:
-    print(f"{user_input_month} + {day} = {total_day_count}")
-elif user_input_month == april:
-    print(f"{user_input_month} + {day} = {total_day_count}")
-elif user_input_month == may:
-    print(f"{user_input_month} + {day} = {total_day_count}")
-elif user_input_month == june:
-    print(f"{user_input_month} + {day} = {total_day_count}")
-elif user_input_month == july:
-    print(f"{user_input_month} + {day} = {total_day_count}")
-elif user_input_month == august:
-    print(f"{user_input_month} + {day} = {total_day_count}")
-elif user_input_month == september:
-    print(f"{user_input_month} + {day} = {total_day_count}")
-elif user_input_month == october:
-    print(f"{user_input_month} + {day} = {total_day_count}")
-elif user_input_month == november:
-    print(f"{user_input_month} + {day} = {total_day_count}")
-elif user_input_month == december:
-    print(f"{user_input_month} + {day} = {total_day_count}")
-else:
-    print(f'Unrecognised month {user_input_month}')
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
 
+chelsea_players.remove('T.Silva')
+chelsea_players.insert(2, 'Christensen')
+print(f'39 mins: Chelsea Substitution (Injury)  < IN: Christensen   > OUT: T.Silva {chelsea_players}')
 
-is_leap_year = False
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
 
-if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
-    is_leap_year = True
+chelsea_players.remove('Havertz')
+chelsea_players.insert(9, 'Havertz (GOAL)')
+print(f'42 mins: GOAL!!! HAVERTZ!!!. Man City 0-1 Chelsea {chelsea_players}')
 
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
 
-# what you are going to do?
-if is_leap_year:
-    pass
+print('45 mins: Half Time')
+
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
+
+print('2nd half begins.')
+
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
+
+chelsea_players.remove('Rüdiger')
+chelsea_players.insert(1, 'Rüdiger (Y)')
+print(f'Yellow Card for Rüdiger (Chelsea) {chelsea_players}')
+
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
+
+mancity_players = ['Ederson (GK)', 'Walker', 'Stones', 'Dias', 'Zinchenko', 'B.Silva', 'Gündogan', 'Foden', 'Mahrez', 'De Bruyne (C)', 'Sterling (C)']
+mancity_players.remove('De Bruyne (C)')
+mancity_players.insert(9, 'Jesus')
+print(f'60 mins: Man City Substitution (Injury) < IN: Jesus  > OUT: De Bruyne {mancity_players}   Man City captain is now Sterling')
+
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
+
+mancity_players.remove('B.Silva')
+mancity_players.insert(5, 'Fernandinho')
+print(f'64 mins: Man City Substitution (Tactical) < IN: Fernandinho  > OUT: B.Silva {mancity_players}')
+
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
+
+chelsea_players.remove('Werner')
+chelsea_players.insert(10, 'Pulisic')
+print(f'66 mins: Chelsea Substitution (Tactical) < IN: Pulisic  > OUT: Werner {chelsea_players}')
+
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
+
+mancity_players.remove('Sterling (C)')
+mancity_players.insert(10, 'Agüero (C)')
+print(f'77 mins: Man City Substitution (Tactical) < IN: Agüero  > OUT: Sterling {mancity_players}  Man City captain is now Agüero')
+
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
+
+chelsea_players.remove('Mount')
+chelsea_players.insert(8, 'Kovačić')
+print(f'80 mins: Chelsea Substitution (Tactical) < IN: Kovačić  > OUT: Mount {chelsea_players}')
+
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
+
+mancity_players.remove('Jesus')
+mancity_players.insert(9, 'Jesus (Y)')
+print(f'88 mins: Yellow Card for Jesus (Man City) {mancity_players}')
+
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
+
+print('Full Time  Man City 0-1 Chelsea')
+
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
+
+chelsea_victory_message = ('CHELSEA', 'ARE', 'THE', 'CHAMPIONS', 'OF', 'EUROPE')
+chelsea_victory_message_join = ' ** '.join(chelsea_victory_message)
+print(chelsea_victory_message_join)
+
+print('--------------------------------------------------------------------------------------------------------------------------------------------')
+
+'''
+        'E/M',  'W/R',  'S/T',  'D/A',  'Z/C',  'B/J',  'G/K',  'F/J',  'M/M',  'DB/H',  'S/W'
+index     0       1       2       3       4       5       6       7       8       9       10
+         -11     -10     -9      -8      -7      -6      -5      -4      -3      -2      -1
+'''
