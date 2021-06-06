@@ -1,3 +1,6 @@
+# Step 1) Define a nested list which holds all DBS history prices from 2019-01-01 till 2021-01-14
+# trade_data is a list of day_trade_data.
+# day_trade_data is a list which holds trade_date / OPEN / HIGH / LOW / CLOSE / VOLUME info of the trading day.
 
 trade_data = [
     [20190101, 23.69, 23.69, 23.69, 20.95, 0],
