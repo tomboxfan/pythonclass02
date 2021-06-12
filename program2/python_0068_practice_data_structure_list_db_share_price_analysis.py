@@ -534,6 +534,68 @@ For example:
     [20210112, 26.79, 26.86, 26.52, 26.73, 4847200],
     [20210113, 27.0, 27.1, 26.72, 26.76, 3740200],
     [20210114, 26.9, 26.99, 26.77, 26.99, 2521200],
+    
+    
+Requirement:
+1) Calculate SMA_5 for each day, the initial 4 days do no have enough previous CLOSE prices, so there is no SMA_5 for them.
+2) Append the SMA_5 value to the end of day_trade_data list.
+3) Loop from the beginning: 
+   As soon as CLOSE of the day goes up above SMA_5, print TRADE_DATE / CLOSE / SMA_5 of the day.
+   As soon as CLOSE of the day goes down below SMA_5, print TRADE_DATE / CLOSE / SMA_5 of the day.
+'''
 
 
 '''
+Logic:
+
+Observation 1:
+SMA_5 is the arithmetic mean of the past 5 days' CLOSE.
+
+Conclusion 1:
+I need to collect the past 4 days' CLOSE + today's CLOSE, then I calculate the arithmetic mean.
+To do that, I can simply put the CLOSE into a list close_price_list
+Then I can sum(close_price_list) / 5 is the SMA_5 value.
+
+
+Observation 2: 
+I need to calculate SMA_5 for each list in list trade_data
+
+Conclusion 2:
+So I need to put the core logic in a loop.
+When len(close_price_list) < 5, for example, the first 4 days, then I cannot calculate SMA_5
+When I move on to the next day, I need to remove the 1st day's CLOSE, append the new day's CLOSE
+So that len(close_price_list) is ALWAYS 5.
+    1) append(today's CLOSE) to add today's CLOSE
+    2) pop(0) to remove the 1st day's CLOSE
+    3) sma5 = sum(close_price_list) / 5
+'''
+
+# This variable holds the past 5 days' CLOSE prices
+close_price_list = []
+
+
+# As I need to calculate the SMA_5 for all day_trade_data, so I need to loop one by one
+for day_trade_data in trade_data:
+
+    # Step 1) append today's CLOSE TO close_price_list
+    close_price_list.append(day_trade_data[4])  # CLOSE price is at index 4 of day_trade_data list. For example:  [20210114, 26.9, 26.99, 26.77, 26.99, 2521200]
+
+    # Step 2) I need to check whether close_price_list's size is 5 or not
+    # if it's 5, then I calculate the SMA_5 for today's day_trade_data
+    if len(close_price_list) == 5:
+
+        # Step 2.1) calculate the arithmetic mean of the last 5 days' CLOSE price
+        sma5 = round(sum(close_price_list) / 5, 2)
+        # built-in function round() can help you round your decimal to keep certain values after the decimal point.
+
+        # Step 2.2) append the calculated SMA_5 to the end of today's day_trade_data
+        day_trade_data.append(sma5)
+
+        # Step 2.3) remove the 1st CLOSE price in the close_price_list, as it is useless for tomorrow's SMA5
+        # After this step, the len(close_price_list) becomes 4 again.
+        close_price_list.pop(0)
+
+
+from pprint import pprint
+
+pprint(trade_data)
