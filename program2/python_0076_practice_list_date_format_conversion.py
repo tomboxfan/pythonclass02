@@ -46,6 +46,23 @@ Conclusion 3:
 I can define a list - day_endings, to hold the 31 days' ending str, and I use day int as index to read the value directly.
 '''
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# PREPARE DATA BEGIN ===============================================
+
 months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
 day_endings = ['st', 'nd', 'rd'] + ['th'] * 17 + ['st', 'nd', 'rd'] + ['th'] * 7 + ['st']
@@ -54,5 +71,11 @@ year = int(input("Year: "))
 month = int(input("Month (1-12): "))
 day = int(input("Day (1-31): "))
 
+# MAIN PROGRAM BEGIN ==============================================
 
+# Remember to subtract 1 from month so that you can get the correct index from months list
+month_str = months[month - 1]
+day_str = str(day) + day_endings[day - 1]
+
+print(month_str, day_str + ",", year)
 
