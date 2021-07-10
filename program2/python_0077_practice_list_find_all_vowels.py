@@ -5,6 +5,23 @@ Requirement 1) You need to find all the vowels(a/e/i/o/u) in the word.
 Requirement 2) Further enhance your code, only collect vowels once (we don't want duplicate vowels)
 '''
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # PREPARE DATA BEGIN ===============================================
 
 # 1) I need to store the 5 vowels letter into a list, so that I can check whether some letter is a member of the list or not
