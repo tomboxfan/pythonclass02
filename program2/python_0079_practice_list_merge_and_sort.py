@@ -46,7 +46,9 @@ Answer: if len(list_a) is 10, the list_a index value is from 0 - 9.
 # PREPARE DATA BEGIN ===============================================
 
 # This is the 2 lists given by the question
-list_a = [1,5,7,9,13,15,24,27,78,110,167]
+# list_a = [1,5,7,9,13,15,24,27,78,110,167]
+
+list_a = [1,5,7,9]
 list_b = [2,2,6,8,16,17,18,19,99]
 
 # This is to hold our final result
@@ -67,13 +69,19 @@ while True:
         new_list.extend(list_b[index_b:])
         break
 
-
-
     # Situation 2) list_a has NOT reached the end, list_b has reached the end.
-
+    if index_a < len(list_a) and index_b == len(list_b):
+        # append the remaining values of list_a to new_list
+        new_list.extend(list_a[index_a:])
+        break
 
     # Situation 3) list_a has NOT reached the end, list_b has NOT reached the end.
-
+    if list_a[index_a] < list_b[index_b]:
+        new_list.append(list_a[index_a])
+        index_a += 1
+    else:
+        new_list.append(list_b[index_b])
+        index_b += 1
 
 
 
