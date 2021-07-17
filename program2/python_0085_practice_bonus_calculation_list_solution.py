@@ -82,7 +82,15 @@ I need to check whether the profit exceeds the thresholds values.
 
 
 [tier 3]
-... ...
+
+    if profit <= 2,000,000                  if profit <= thresholds[2]
+        bonus = bonus + profit * 0.05           bonus += profit * rates[2]
+        finish                                  finish
+        
+    if profit > 2,000,000                   if profit > thresholds[2]
+        bonus = bonus + 2,000,000  * 0.05       bonus += thresholds[2] * rates[2]
+        profit = profit - 2,000,000             profit -= thresholds[2]
+        go to [tier 4]                          go to [tier 4]
 
 [tier 4]
 ... ...
@@ -92,6 +100,22 @@ I need to check whether the profit exceeds the thresholds values.
 
 [tier 6]
 
+    bonus = bonus + profit * 0.01           bonus += profit * rates[5]
 
 
 '''
+
+for i in range(5):
+
+    if profit <= thresholds[i]:
+        bonus += profit * rates[i]
+        print(f"We should keep ${bonus} to our staff for this outlet.")
+        exit() # built-in function exit() will cause the program exit
+
+    bonus += thresholds[i] * rates[i]
+    profit -= thresholds[i]
+
+
+bonus += profit * rates[5]
+print(f"We should keep ${bonus} to our staff for this outlet.")
+
